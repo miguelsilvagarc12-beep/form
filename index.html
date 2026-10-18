@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Población</title>
+  <style>
+    /* Estilos Generales y Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Encabezado Institucional */
+    header {
+      background-color: #006847;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header .marca {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+      letter-spacing: 2px;
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 2px 15px;
+      border-radius: 5px;
+    }
+
+    header .lema {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333333;
+      margin-top: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(255, 255, 255, 0.85);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    /* Contenedor Principal */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .bienvenida {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .bienvenida h1 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+
+    .bienvenida p {
+      color: #7f8c8d;
+      font-size: 1rem;
+    }
+
+    /* Formulario */
+    form {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 500px;
+      border-top: 5px solid #006847;
+    }
+
+    .campo {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      padding: 10px 12px;
+      font-size: 1rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      border-color: #006847;
+      box-shadow: 0 0 0 3px rgba(0, 104, 71, 0.15);
+    }
+
+    /* Filas Dobles Responsivas */
+    .fila-doble {
+      display: flex;
+      gap: 15px;
+    }
+
+    .fila-doble .campo {
+      flex: 1;
+    }
+
+    /* Botón de Envío */
+    button {
+      background-color: #006847;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s, transform 0.1s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #004d34;
+    }
+
+    button:active {
+      transform: scale(0.98);
+      
+    }
+
+    /* Pie de Página */
+    footer {
+      background-color: #2d3748;
+      color: #cbd5e0;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Ajustes para Pantallas Pequeñas (Celulares) */
+    @media (max-width: 480px) {
+      .fila-doble {
+        flex-direction: column;
+        gap: 0;
+      }
+      header {
+        background: #006847;
+      }
+      header .lema {
+        color: #ffffff;
+        background: transparent;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="marca">PRI</p>
+  <div><p class="lema">Partido Revolucionario Institucional</p></div>
+</header>
+
+<main>
+  <div class="bienvenida">
+    <h1>Bienvenido(a)</h1>
+    <p>Por favor, introduce tus datos para registrarte</p>
+  </div>
+
+  <!-- REEMPLAZA EL CONTENIDO DE action CON TU URL DE FORMSPREE -->
+  <form action="https://formspree.io/f/xjygzbyj" method="POST">
+    
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="Nombre" required>
+    </div>
+
+    <div class="fila-doble">
+      <div class="campo">
+        <label for="apellido1">Primer apellido</label>
+        <input type="text" id="apellido1" name="Primer Apellido" required>
+      </div>
+      <div class="campo">
+        <label for="apellido2">Segundo apellido</label>
+        <input type="text" id="apellido2" name="Segundo Apellido">
+      </div>
+    </div>
+
+    <div class="fila-doble">
+      <div class="campo">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="Edad" min="18" max="120" required>
+      </div>
+      <div class="campo">
+        <label for="anioNacimiento">Año de nacimiento</label>
+        <input type="number" id="anioNacimiento" name="Año de Nacimiento" min="1920" max="2026" required>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="distrito">Distrito</label>
+      <input type="text" id="distrito" name="Distrito" required>
+    </div>
+
+    <div class="campo">
+      <label for="municipio">Municipio</label>
+      <input type="text" id="municipio" name="Municipio" required>
+    </div>
+
+    <div class="campo">
+      <label for="localidad">Localidad</label>
+      <input type="text" id="localidad" name="Localidad" required>
+    </div>
+
+    <button type="submit">Registrarme</button>
+  </form>
+</main>
+
+<footer>
+  <p>Muestreo estadístico con fines de análisis poblacional en México.</p>
+</footer>
+
+</body>
+</html>
